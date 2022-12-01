@@ -1,5 +1,4 @@
-import albumsModel from "./album-model"
-
+import albumsModel from "./album-model.js"
 
 export const findAllAlbums = async () => {
     const albums = await albumsModel.find()

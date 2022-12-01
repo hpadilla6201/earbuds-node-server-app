@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import albumsController from "./albums/album-controller.js";
 import cors from 'cors'
 import session from 'express-session'
+import SessionController from "./session-controller.js";
 
 const options = {
     useNewUrlParser: true,
@@ -27,7 +28,7 @@ app.use(session({
 app.use(express.json())
 
 albumsController(app);
-SessionController(app)
+SessionController(app);
 
 app.listen(4000)
 

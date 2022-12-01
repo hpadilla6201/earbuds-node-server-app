@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import alubmsSchema from "./album-schema";
+import alubmsSchema from "./album-schema.js";
 
 const albumsModel = mongoose.model('AlbumsModel', alubmsSchema)
 

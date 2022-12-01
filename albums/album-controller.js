@@ -1,4 +1,4 @@
-import * as albumDao from './albums-dao'
+import * as albumDao from './albums-dao.js'
 
 export const getAlbums = () => albums;
 
