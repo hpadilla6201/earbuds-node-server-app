@@ -33,12 +33,12 @@ const UsersController = (app) => {
   const login = async (req, res) => {
     const credentials = req.body;
     const existingUser = await userDao.findUserByCredentials(
-      username.credentials.username,
+      credentials.username,
       credentials.password
     );
     if (existingUser) {
       req.session["currentUser"] = existingUser;
-      req.json(existingUser);
+      res.json(existingUser);
       return;
     }
     res.sendStatus(403);
@@ -46,7 +46,7 @@ const UsersController = (app) => {
 
   const logout = (req, res) => {
     req.session.destroy();
-    req.sendStatus(200);
+    res.sendStatus(200);
   };
 
   const profile = (req, res) => {
