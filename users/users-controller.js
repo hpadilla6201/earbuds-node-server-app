@@ -14,9 +14,19 @@ const UsersController = (app) => {
     res.json(actualUser);
   };
 
-  const updateUser = async (req, res) => {};
+  const updateUser = async (req, res) => {
+    const userIdToUpdate = req.params.uid;
+    const updates = req.body;
 
-  const deleteUser = async (req, res) => {};
+    const status = await userDao.updateUser(userIdToUpdate, updates);
+    res.sendStatus(200);
+  };
+
+  const deleteUser = async (req, res) => {
+    const userdIdToDelete = req.params.uid;
+    const status = await user.deleteUser(userdIdToDelete);
+    res.sendStatus(200);
+  };
 
   const register = async (req, res) => {
     const user = req.body;
