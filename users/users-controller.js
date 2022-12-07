@@ -63,7 +63,7 @@ const UsersController = (app) => {
     if (req.session["currentUser"]) {
       res.send(req.session["currentUser"]);
     } else {
-      res.send(403);
+      res.sendStatus(403);
     }
   };
 
