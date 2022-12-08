@@ -12,7 +12,7 @@ const LikesController = (app) => {
   const userUnlikesAlbum = async (req, res) => {
     const uid = req.params.uid;
     const aid = req.params.aid;
-    const status = await likesDao.userUnlikesMovie(uid, aid);
+    const status = await likesDao.userUnlikesAlbum(uid, aid);
     res.send(status);
   };
 

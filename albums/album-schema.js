@@ -6,7 +6,6 @@ const alubmsSchema = mongoose.Schema(
     likes: { type: Number, default: 0 },
     liked: { type: Boolean, default: false },
     dislikes: Number,
-    rating: String,
   },
   { collection: "albums" }
 );

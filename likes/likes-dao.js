@@ -14,9 +14,9 @@ export const findAlbumsLikedByUser = async (uid) => {
     .populate("album", "title")
     .exec();
 };
-export const findUsersThatLikeMovie = async (mid) => {
+export const findUsersThatLikeAlbum = async (aid) => {
   return await likesModel
-    .find({ movie: mid }, { movie: false })
+    .find({ album: aid }, { album: false })
     .populate("user", "username")
     .exec();
 };
