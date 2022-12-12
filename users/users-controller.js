@@ -18,8 +18,9 @@ const UsersController = (app) => {
     const userIdToUpdate = req.params.uid;
     const updates = req.body;
 
-    const status = await userDao.updateUser(userIdToUpdate, updates);
-    res.sendStatus(200);
+    const result = await userDao.updateUser(userIdToUpdate, updates);
+    console.log(result);
+    res.status(200).send({ ...updates });
   };
 
   const deleteUser = async (req, res) => {

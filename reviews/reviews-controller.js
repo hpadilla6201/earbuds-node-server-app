@@ -10,7 +10,9 @@ const ReviewsController = (app) => {
   };
   const findReviewsByAlbum = async (req, res) => {
     const lastFmID = req.params.lastFmID;
+    console.log(lastFmID);
     const reviews = await dao.findReviewsByAlbum(lastFmID);
+    console.log(reviews);
     res.json(reviews);
   };
   const findReviewsByAuthor = async (req, res) => {
