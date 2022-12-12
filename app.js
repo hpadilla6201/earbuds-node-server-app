@@ -19,7 +19,10 @@ const options = {
   family: 4,
 };
 
-mongoose.connect("mongodb://localhost:27017/earbuds", options);
+const DB_CONNECTION_STRING =
+  "mongodb+srv://hpadilla6201:Cristiano7!!@cluster0.26fhyow.mongodb.net/tuiter?retryWrites=true&w=majority";
+
+mongoose.connect(DB_CONNECTION_STRING, options);
 
 const app = express();
 app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
