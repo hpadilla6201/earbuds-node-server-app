@@ -28,7 +28,7 @@ const app = express();
 app.use(
   cors({
     credentials: true,
-    origin: "https://meek-kataifi-fda3e7.netlify.app",
+    origin: "*",
   })
 );
 app.use(
