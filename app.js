@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import albumsController from "./albums/album-controller.js";
 import cors from "cors";
-import session from "express-session";
+import session from "cookie-session";
 import SessionController from "./session-controller.js";
 import UsersController from "./users/users-controller.js";
 import LikesController from "./likes/likes-controller.js";
