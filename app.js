@@ -28,7 +28,7 @@ const app = express();
 app.use(
   cors({
     credentials: true,
-    origin: "https://earbuds-node-server-app.herokuapp.com",
+    origin: "https://meek-kataifi-fda3e7.netlify.app",
   })
 );
 app.use(
