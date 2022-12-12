@@ -1,12 +1,12 @@
 import * as dao from "./reviews-dao.js";
 
 const ReviewsController = (app) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
   const createReview = async (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
     const review = req.body;
     const currentUser = req.session["currentUser"];
     review.author = currentUser._id;
