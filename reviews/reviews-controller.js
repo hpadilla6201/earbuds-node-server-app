@@ -15,10 +15,7 @@ const ReviewsController = (app) => {
   };
   const findReviewsByAlbum = async (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
-    res.header(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested-With, Content-Type, Accept"
-    );
+
     const lastFmID = req.params.lastFmID;
     const reviews = await dao.findReviewsByAlbum(lastFmID);
     res.json(reviews);
