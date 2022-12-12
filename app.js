@@ -25,7 +25,12 @@ const DB_CONNECTION_STRING =
 mongoose.connect(DB_CONNECTION_STRING, options);
 
 const app = express();
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+app.use(
+  cors({
+    credentials: true,
+    origin: "https://earbuds-node-server-app.herokuapp.com",
+  })
+);
 app.use(
   session({
     secret: "colud be anything",
