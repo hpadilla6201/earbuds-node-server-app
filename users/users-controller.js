@@ -42,6 +42,11 @@ const UsersController = (app) => {
   };
 
   const login = async (req, res) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
     const credentials = req.body;
     const existingUser = await userDao.findUserByCredentials(
       credentials.username,
