@@ -6,3 +6,5 @@ export const findReviewsByAlbum = (lastFmID) =>
   reviewsModel.find({ lastFmID }).populate("author").exec();
 
 export const findReviewsByAuthor = (author) => reviewsModel.find({ author });
+
+export const deleteReview = (rid) => reviewsModel.deleteOne({ _id: rid });

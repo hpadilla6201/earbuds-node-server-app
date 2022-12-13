@@ -21,13 +21,15 @@ const options = {
 
 const DB_CONNECTION_STRING =
   "mongodb+srv://hpadilla6201:Cristiano7!!@cluster0.26fhyow.mongodb.net/tuiter?retryWrites=true&w=majority";
-
+// eslint-disable-next-line
+const LOCAL_STRING = "mongodb://localhost:27017/earbuds";
 mongoose.connect(DB_CONNECTION_STRING, options);
 
 const app = express();
 app.use(
   cors({
     credentials: true,
+    // origin: "http://localhost:3000",
     origin: "https://meek-kataifi-fda3e7.netlify.app",
   })
 );

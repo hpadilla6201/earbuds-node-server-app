@@ -19,13 +19,12 @@ const UsersController = (app) => {
     const updates = req.body;
 
     const result = await userDao.updateUser(userIdToUpdate, updates);
-    console.log(result);
     res.status(200).send({ ...updates });
   };
 
   const deleteUser = async (req, res) => {
     const userdIdToDelete = req.params.uid;
-    const status = await user.deleteUser(userdIdToDelete);
+    const status = await userDao.deleteUser(userdIdToDelete);
     res.sendStatus(200);
   };
 
@@ -56,7 +55,7 @@ const UsersController = (app) => {
   };
 
   const logout = (req, res) => {
-    req.session.destroy();
+    req.session = null;
     res.sendStatus(200);
   };
 
